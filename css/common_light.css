@@ -1,0 +1,13 @@
+body
+{
+    background-color: #fdfcf8
+}
+#wrapper
+{
+    margin: 0,auto;
+    padding: 0;
+    border: 0;
+    width: 1280;
+    text-align: left;
+    background: #e8e7e3;
+}

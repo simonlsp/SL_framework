@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset='utf-8' />
+    <title>实验室耗材购买管理平台</title>
+    <meta name='robots' content='none' />
+    <meta name='author' content='simonlsp_workshop' />
+    <link href='css/common_dark.css' rel='stylesheet' type='text/css' />
+</head>
+
+<body>
+    <div id='wrapper'>
+        <div id='headline'>
+            <h1 style='margin-left:10px;'>
+                实验室耗材购买管理平台
+            </h1>
+        </div>
+        <div id='main_nav'>
+            <ui class='main_list'>
+                <li><a id="disable_list" title="权限不足">申请管理</a></li>
+                <li><a id="disable_list" title="权限不足">申请审批</a></li>
+                <li><a id="disable_list" title="权限不足">用户设置</a></li>
+                <li><a id="disable_list" title="权限不足">用户管理</a></li>
+                <li><a id="disable_list" title="权限不足">系统管理</a></li>
+                <li><a id="active_list">注册/登录</a></li>
+                <div class="clear"></div>
+            </ui>
+        </div>
+        <div id='left_nav'>
+            <ol>
+                <li>
+                    <a style='color:white;' href="login.php?act='signin'">登录</a>
+                </li>
+                <li>
+                    <a style='color:dg;' href="login.php?act='signup'">注册</a>
+                </li>
+
+            </ol>
+        </div>
+        <div id='maincontent'>
+            <form id='setupform' action='index.php' method='POST'>
+                <h3>用户登录：</h3>
+                <br />用户名：<br />
+                <input type="text" name="user" style="width:200px;"/>
+                <br />密码：<br />
+                <input type="password" name="password" style="width:200px;"/>
+                <br />
+                <input type="submit" value="登录" style="padding:5px;" />
+            </form>
+        </div>
+        <div id='bottomline'>
+            <p style='margin-left:35px;'>
+                Version: 0.1 Beta
+            </p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE HTML>
+<html>
+    <meta charset="utf-8" />
+    <meta name="robots" content="none" />
+    <meta name="author" content="simonlsp_workshop" />
+    <title>网站初始化中......</title>
+    <link href="css/common_dark.css" rel="stylesheet" type="text/css" />
+</html>
+<body>
+    <div id="wrapper">
+        <div id="headline">
+            <h1 style="margin-left:10px;">实验室耗材购买管理平台</h1>
+        </div>
+        <div id="main_nav">
+            <h2 style="margin-left:10px;">站点已经安装完成，请进行初始化配置</h2>
+        </div>
+        <div id="left_nav">
+            <ol id="step">
+                <script>
+                    var step=0;
+                    if (step>0)
+                    {
+                        document.write('<li style="color:darkgreen;">');
+                    }
+                    else
+                    {
+                        if(step==0)
+                        {
+                            document.write('<li style="color:#f0f0f0;">');
+                        }
+                        else
+                        {
+                            document.write('<li style="color:darkred;">');
+                        }
+                    }
+                    document.write('确定数据库类型</li>');
+                    if (step>2)
+                    {
+                        document.write('<li style="color:darkgreen;">');
+                    }
+                    else
+                    {
+                        if (step==1||step==2)
+                        {
+                            document.write('<li style="color:#f0f0f0;">');
+                        }
+                        else
+                        {
+                            document.write('<li style="color:darkred;">');
+                        }
+                    }
+                    document.write('确定连接字符串</li>');
+                    if (step>3)
+                    {
+                        document.write('<li style="color:darkgreen;">');
+                    }
+                    else
+                    {
+                        if (step==3)
+                        {
+                            document.write('<li style="color:#f0f0f0;">');
+                        }
+                        else
+                        {
+                            document.write('<li style="color:darkred;">');
+                        }
+                    }
+                    document.write('管理员账号注册</li>');
+                    if (step>4)
+                    {
+                        document.write('<li style="color:darkgreen;">');
+                    }
+                    else
+                    {
+                        if (step==4)
+                        {
+                            document.write('<li style="color:#f0f0f0;">');
+                        }
+                        else
+                        {
+                            document.write('<li style="color:darkred;">');
+                        }
+                    }
+                    document.write('数据库初始化</li>');
+                </script>
+            </ol>
+        </div>
+        <div id="maincontent">
+            <form id="setupform" action="setup.php" method="POST">
+
+            </form>
+        </div>
+        <div id="bottomline">
+            <p style="margin-left:35px;">Version: 0.1 Beta</p>
+        </div>
+    </div>
+    <script>
+        switch(step)
+        {
+            case 0:
+            document.getElementById("setupform").innerHTML='\n\
+                <h3>请选择你希望使用的数据库类型：</h3>\n\
+                <br />\n\
+                <input type="radio" name="dbtype" value="mysql" checked/>Mysql/Mariadb\n\
+                <br />\n\
+                <input type="radio" name="dbtype" value="sqlite" />SQLite\n\
+                <br /><b style="color:#FF0000;">请确保config.php对网页服务器可写，并已设置为禁止外部访问！</b><br />\n\
+                <input type="submit" value="下一步" style="padding:5px;" />\n\
+            ';
+            break;
+            case 1:
+            document.getElementById("setupform").innerHTML='\n\
+                <h3>请输入Mysql/Mariadb数据库的连接凭证：</h3>\n\
+                <br />数据库地址与接口：<br />\n\
+                <input type="text" name="address" style="width:200px;"/>:<input type="text" name="socket" style="width:40px;"/>\n\
+                <br />用户名（需要建立数据库的权限）：<br />\n\
+                <input type="text" name="user" style="width:200px;"/>\n\
+                <br />密码：<br />\n\
+                <input type="password" name="password" style="width:200px;"/>\n\
+                <br />\n\
+                <input type="submit" value="下一步" style="padding:5px;" />\n\
+            ';
+            break;
+            case 2:
+            document.getElementById("setupform").innerHTML='\n\
+                <h3>请输入希望建立SQLite数据库的文件名：</h3>\n\
+                <br />文件名：<br />\n\
+                <input type="text" name="path" style="width:200px;"/>\n\
+                <br /><b style="color:#FF0000;">请确保sqlite文件夹对网页服务器可写，并已设置为禁止外部访问！</b><br />\n\
+                <input type="submit" value="下一步" style="padding:5px;" />\n\
+            ';
+            break;
+            case 3:
+            document.getElementById("setupform").innerHTML='\n\
+                <h3>请注册站长账号：</h3>\n\
+                <p>实验耗材管理平台的用户权限大致依照以下等级划分：</p>\n\
+                <ol>\n\
+                    <li>A级人员：权限管理，具有更改用户权限程度的能力。</li>\n\
+                    <li>B级人员：订单管理，具有批准和否决申请程度的能力。</li>\n\
+                    <li>C级人员：授权用户，具有提交订单申请程度的能力。</li>\n\
+                    <li>D级人员：新注册用户，没有任何能力。</li>\n\
+                </ol>\n\
+                <p>站长为试剂管理平台的管理者，权限锁定为A级。</p>\n\
+                <br />用户名：<br />\n\
+                <input type="text" name="user" style="width:200px;"/>\n\
+                <br />密码：<br />\n\
+                <input type="password" name="password" style="width:200px;"/>\n\
+                <br />\n\
+                <input type="submit" value="下一步" style="padding:5px;" />\n\
+            ';
+            break;
+            case 4:
+            document.getElementById("setupform").innerHTML='\n\
+                <h3>站点初始化已经接近完成，这是最后一步：</h3>\n\
+                <input type="submit" value="数据库初始化" style="padding:5px;" />\n\
+            ';
+            break;
+            case 5:
+            document.getElementById("setupform").innerHTML='\n\
+            <h3>初始化已经完成</h3>\n\
+            <a href="index.php">点此跳转至首页开始使用</a>\n\
+            ';
+            break;
+        }
+    </script>
+</body>

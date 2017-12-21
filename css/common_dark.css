@@ -1,0 +1,118 @@
+body
+{
+    margin-top: 1px;
+    background-color: #333333;
+    color:#c8c8c8;
+    font-family: "PingFangSC-Regular,Verdana,Arial,'微软雅黑','宋体'";
+}
+h1
+{
+    margin: 0;
+    color: #1e1e1e;
+    font-family: "微软雅黑";
+}
+h2
+{
+    margin: 0;
+    color: #969696;
+    font-family: "微软雅黑";
+}
+h3
+{
+    margin: 0;
+    color: #f0f0f0;
+    font-family: "微软雅黑";
+}
+#wrapper
+{
+    margin: 0 auto;
+    width: 1024px;
+    text-align: left;
+    background-color: #252525;
+}
+#headline
+{
+    background-color: #e8e8e8;
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+}
+#main_nav
+{
+    background-color: #252525;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+}
+.main_list
+{
+    list-style: none;
+    text-align: center;
+}
+.main_list li
+{
+    float: left;
+}
+.main_list li a
+{
+    display: inline-block;
+    background-color: #2d2d2d;
+    margin-right: 2px;
+    width: 150px;
+    height: 100%;
+    text-decoration: none;
+    color:#c8c8c8;
+}
+.main_list li a:hover
+{
+    background-color: #262626;
+    color:#ffffff;
+}
+#active_list
+{
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+#active_list:hover
+{
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+#disable_list
+{
+    background-color: #2d2d2d;
+    color: #707070;
+}
+#disable_list:hover
+{
+    background-color: #2d2d2d;
+    color: #707070;
+}
+#left_nav
+{
+    width: 200px;
+    padding-top:15px;
+    padding-bottom: 15px;
+    float: left;
+}
+#maincontent
+{
+    background-color:#1e1e1e; 
+    width: 750px;
+    padding: 25px;
+    margin-left: 24px;
+    line-height: 200%;
+    float: left;
+}
+#bottomline
+{
+    clear: both;
+    background-color: #007ACC;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+}
+.clear
+{
+    clear: both;
+}
